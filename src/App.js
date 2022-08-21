@@ -7,7 +7,8 @@ import Ref from './demo/Ref';
 import Memo from './demo/Memo';
 import UseMemo from './demo/UseMemo';
 import UseReducer from './demo/UseReducer';
-import TodoApp from './demo/TodoApp';
+import TodoApp from './demo/Todo';
+import Content from './demo/Content/Content'
 // Check Id two binding
 // const courses = [
 //   {
@@ -111,6 +112,7 @@ function App (){
   const [count, setCount] = useState(0);
   const [reducer, setReducer] = useState(false);
   const [todo, setTodo] = useState(false);
+  const [content, setContent] = useState(false);
   const handleIncrease = useCallback(() => {
     setCount(prevCount => prevCount +1) 
   }, [])
@@ -143,7 +145,11 @@ function App (){
         <div className='toDo'>
           <button onClick={() => setTodo(!todo)}>Click useReducer</button>
           {todo && <TodoApp/>}
-        </div>  
+        </div>
+        <div className='content'>
+          <button onClick={() => setContent(!content)}>Click useContent</button>
+          {content && <Content/>}
+        </div>    
     </div>
   )
 }
